@@ -1,0 +1,26 @@
+<!-- Bulb On/off-->
+<html>
+<head>
+<script>
+function bulb(btn)
+{
+var imBulb=document.getElementById("im");
+//var b=document.getElementById("b");
+if(btn.value=="On")
+{
+imBulb.src="pic_bulbon.gif";
+btn.value="Off"
+}
+else
+{
+imBulb.src="pic_bulboff.gif";
+btn.value="On";
+}
+}
+</script>
+</head>
+<body>
+<img id="im" src="pic_bulboff.gif"/><br><br>
+<input type="button" onclick="bulb(this)" value="On"/>
+</body>
+</html>

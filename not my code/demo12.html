@@ -1,0 +1,22 @@
+<!-- Create a HTML page to set or get the content of a div tag -->
+<html>
+<head>
+<script>
+function getSet()
+{
+document.getElementById("dvsecond").innerHTML=document.getElementById("dvfirst").innerHTML;
+}
+</script>
+</head>
+<body>
+<div id="dvfirst" style="height:200px; width:200px; border:2px solid blue; float:left; margin:10px;">
+<img src="image/1.jpg" width="200px"height="200px"/>
+<br/>
+Hello World
+</div>
+<div id="dvsecond" style="height:200px; width:200px; border:2px solid blue; float:left; margin:10px;">
+</div>
+<br/></br>
+<button onclick="getSet()">Click Here</button>
+</body>
+</html>

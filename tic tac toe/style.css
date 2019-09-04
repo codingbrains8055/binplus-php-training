@@ -1,0 +1,56 @@
+.main{
+    width: 306;
+    height: 300;
+    background-color: black;
+}
+button{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: bolder;
+    font-size: 25;
+    text-align: center;
+}
+
+.row{
+    width: 308;
+    height: 108;
+    background-color: aqua;
+    border: 1px solid;
+}
+.row .col{
+    width: 100;
+    height: 100;
+    background-color: bisque;
+    border: 1px solid;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+.clicked{
+     width: 100;
+    height: 100;
+    background-color: bisque;
+    border: 1px solid;
+    float: left;
+position: relative;   
+    color: red;
+    background-color: black;
+    text-align: center;
+}
+
+.player{
+    width:60;
+    height: 40;
+    text-align: center;
+}
+
+.player_active{
+      width:60;
+    height: 40;
+    text-align: center;
+    background-color: green;
+}

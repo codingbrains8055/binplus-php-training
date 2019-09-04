@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+mdbootstrap.com	TRUE	/	FALSE	1999999999	720planBAK	R3744888651
+mdbootstrap.com	TRUE	/	FALSE	1999999999	PHPSESSID	9c60a94e94ac87e8e9a871b513d15445
+mdbootstrap.com	TRUE	/	FALSE	1999999999	720planD	R1415012436
+

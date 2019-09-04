@@ -1,0 +1,8 @@
+/*
+ Quantcast measurement tag
+ Copyright (c) 2008-2019, Quantcast Corp.
+*/
+(function(a,g,f){try{__qc("defaults",a,{labels:"_fp.event.Default"})}catch(l){}var h=function(e){var d=f.createElement("a");d.href=e;return d},k=function(e,d,a){return e?"nc"===e?!d||!a||0>d.indexOf(a):"eq"===e?d===a:"sw"===e?0===d.indexOf(a):"ew"===e?(e=d.length-a.length,d=d.lastIndexOf(a,e),-1!==d&&d===e):"c"===e?0<=d.indexOf(a):!1:!1},c=function(a,d,b){var c;c=g.top===g.self?f.location.href:h(f.referrer).href;k(d,c,b)?a(c):a(!1)},b=function(a){return"array"==={}.toString.call(a).match(/\s([a-zA-Z]+)/)[1].toLowerCase()?
+{labels:a.join(",")}:{labels:""+a}};__qc.apply(null,["rules",[a,null,[[b,"_fp.event.Footage - Checkout Link"]],[[c,"c","http://www.shutterstock.com/purchase"]]],[a,null,[[b,"_fp.event.Footage Cart"]],[[c,"eq","https://www.shutterstock.com/video/cart"]]],[a,null,[[b,"_fp.event.Checkout"]],[[c,"c","/checkout"]]],[a,null,[[b,"_fp.event.Homepage"]],[[c,"eq","https://www.shutterstock.com/home"]]],[a,null,[[b,"_fp.event.Checkout"]],[[c,"c","/purchase?orderId\x3d"]]],[a,null,[[b,"_fp.event.Plans and Pricing"]],
+[[c,"c","/subscribe"]]],[a,null,[[b,"_fp.event.Music"]],[[c,"c","/music"]]],[a,null,[[b,"_fp.event.Vectors"]],[[c,"c","/vectors"]]],[a,null,[[b,"_fp.event.Photos"]],[[c,"c","/photos"]]],[a,null,[[b,"_fp.event.Blog"]],[[c,"c","/blog"]]],[a,null,[[b,"_fp.event.Editorial"]],[[c,"c","/editorial"]]],[a,null,[[b,"_fp.event.Footage"]],[[c,"c","/video"]]],[a,null,[[b,"_fp.event.Homepage"]],[[function(a,d,c){var b;b=g.top===g.self?f.location.pathname:h(f.referrer).pathname;k(d,b,c)?a(b):a(!1)},"eq","/"]]]])})("p-d3odYPSIJSEDY",
+window,document);

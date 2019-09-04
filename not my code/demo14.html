@@ -1,0 +1,20 @@
+<!-- Create a HTML page to process object of product by using JS-->
+<html>
+<head>
+<script>
+function getRecords()
+{
+var p1={PName:"Laptop",UPrice:"32500",Qty:3,totalPrice:function(){
+return (this.UPrice*this.Qty);
+}};
+var x="Product Name: "+p1.PName+"<br/> Unit Price: "+p1.UPrice+"<br/>Quantity: "+p1.Qty+"<br/>Total Price: "+p1.totalPrice();
+document.getElementById("dv").innerHTML=x;
+}
+</script>
+</head>
+<body>
+<button onclick="getRecords()">Get Products</button>
+<br/><br/>
+<div id="dv"></div>
+</body>
+</html>

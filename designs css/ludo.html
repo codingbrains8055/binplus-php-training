@@ -1,0 +1,231 @@
+<html>
+  <head>
+    <title>ludo</title>
+      
+      <style>
+          .main_body{
+              width: 800px;
+              height: 800px;
+              margin: auto;
+              border: 2px solid;
+          }
+          .home{
+            width: 100%;
+              height: 350px;
+          }
+          .play{
+              width: 100%;
+              height: 100px;
+          }
+          .home_area{
+              width: 346px;
+              height: 348px;
+              border: 2px solid;
+              float: left;
+              position: relative;
+          }
+          .playing_area_v{
+              width: 96px;
+              height: 348px;
+              border: 2px solid;
+              float: left;
+              position: relative;
+          }
+          .playing_area_h{
+              width: 346px;
+              height: 96px;
+              border: 2px solid;
+              float: left;
+              position: relative;
+          }
+          .home_stop{
+              width: 96px;
+              height: 96px;
+              border: 2px solid;
+              float: left;
+              position: relative;
+          }
+          .red{
+              background-color: red;
+          }
+          .yellow{
+              background-color: yellow;
+          }
+          .green{
+              background-color: green;
+          }
+          .blue{
+              background-color: blue;
+          }          
+          .keep_area{
+              width: 70%;
+              height: 70%;
+              background-color: white;
+              margin: auto;
+              margin-top: 15%;
+              margin-bottom: 15%;
+              border: 2px solid;
+          }
+          .keep_disc_row{
+              width: 100%;
+              height: 50%;
+          }
+          .keep_disc_area{
+              border: 2px solid;
+              width: 70px;
+              height: 70px;
+              float: left;
+              position: relative;
+              margin: 23px 23px 23px 23px;
+          }
+          .table_h{
+              height: 98px;
+              width: 348px;
+            
+          }
+          .table_v{
+              height: 348px;
+              width: 98px;
+            
+          }          
+          table tr td{
+            border: 1px solid; 
+            
+          }          
+          .triangle_right{
+              width: 0;
+              height: 0;
+              border-top: 50px solid transparent;
+              border-left: 50px solid red;
+              border-bottom: 50px solid transparent;
+          }
+          .triangle_left{
+              width: 0;
+              height: 0;
+              border-top: 50px solid transparent;
+              border-right: 50px solid green;
+              border-bottom: 50px solid transparent;
+              float: left;
+              position: relative;
+          }
+          .triangle_up{
+              width: 0;
+              height: 0;
+              border-left: 25px solid transparent;
+              border-right: 25px solid transparent;
+              border-bottom: 50px solid red;
+          }
+          .triangle_bottom{
+              width: 0;
+              height: 0;
+              border-left: 25px solid transparent;
+              border-right: 25px solid transparent;
+              border-top: 50px solid red;
+          }          
+      </style>
+  </head>
+ <body>
+  <div class="main_body">
+      <!-- row1 -->
+      <div class="home">
+        <div class="home_area red">
+          <div class="keep_area">
+              <div class="keep_disc_row">
+               <div class="keep_disc_area red"></div>
+                <div class="keep_disc_area red"></div>  
+              </div>
+              <div class="keep_disc_row ">
+               <div class="keep_disc_area red"></div>
+                <div class="keep_disc_area red"></div>              
+              </div>
+            </div>
+          </div>
+        <div class="playing_area_v">
+          <table cellspacing="0" cellpading="" class="table_v">
+              <tr> <td></td> <td></td> <td></td> </tr>
+              <tr> <td></td> <td class="yellow"></td> <td class="yellow"></td> </tr>
+              <tr> <td></td> <td class="yellow"></td> <td></td> </tr>
+              <tr> <td></td> <td class="yellow"></td> <td></td> </tr>
+              <tr> <td></td> <td class="yellow"></td> <td></td> </tr>
+              <tr> <td></td> <td class="yellow"></td> <td></td> </tr>              
+            </table>          
+          </div>
+        <div class="home_area yellow">
+          <div class="keep_area">
+              <div class="keep_disc_row">
+               <div class="keep_disc_area yellow"></div>
+                <div class="keep_disc_area yellow"></div>  
+              </div>
+              <div class="keep_disc_row ">
+               <div class="keep_disc_area yellow"></div>
+                <div class="keep_disc_area yellow"></div>              
+              </div>
+            </div>  
+          </div>  
+      </div>
+        <!-- row2 -->
+      <div class="play">
+        <div class="playing_area_h">
+          <table cellspacing="0" cellpadding="" class="table_h">
+              <tr> <td></td> <td class="red"></td> <td></td> <td></td> <td></td> <td></td> </tr>
+              <tr> <td></td> <td class="red"></td> <td class="red"></td> <td class="red"></td> <td class="red"></td> <td class="red"></td> </tr>
+              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>              
+            </table>          
+          </div>
+        <div class="home_stop">
+          <div class="triangle_right"></div>
+<!--
+          <div class="triangle_left"></div>
+          <div class="triangle_top"></div> 
+          <div class="triangle_bottom"></div>    
+-->
+          </div>
+        <div class="playing_area_h">
+          <table cellspacing="0" cellpadding="" class="table_h">
+              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+              <tr> <td class="green"></td> <td class="green"></td> <td class="green"></td> <td class="green"></td> <td class="green"></td> <td></td> </tr>
+              <tr> <td></td> <td></td> <td></td> <td></td> <td class="green"></td> <td></td> </tr>              
+            </table>          
+          </div>      
+      </div>
+        <!-- row3 -->
+      <div class="home">
+        <div class="home_area blue">
+          <div class="keep_area">
+              <div class="keep_disc_row">
+               <div class="keep_disc_area blue"></div>
+                <div class="keep_disc_area blue"></div>  
+              </div>
+              <div class="keep_disc_row ">
+               <div class="keep_disc_area blue"></div>
+                <div class="keep_disc_area blue"></div>              
+              </div>
+            </div>
+          </div>
+        <div class="playing_area_v">
+          <table cellspacing="0" cellpadding="" class="table_v">
+              <tr> <td></td> <td class="blue"></td> <td></td> </tr>
+              <tr> <td></td> <td class="blue"></td> <td></td> </tr>
+              <tr> <td></td> <td class="blue"></td> <td></td> </tr>
+              <tr> <td></td> <td class="blue"></td> <td></td> </tr>
+              <tr> <td class="blue"></td> <td class="blue"></td> <td></td> </tr>
+              <tr> <td></td> <td></td> <td></td> </tr>              
+            </table>
+          </div>
+        <div class="home_area green">
+          <div class="keep_area">
+              <div class="keep_disc_row">
+               <div class="keep_disc_area green"></div>
+                <div class="keep_disc_area green"></div>  
+              </div>
+              <div class="keep_disc_row ">
+               <div class="keep_disc_area green"></div>
+                <div class="keep_disc_area green"></div>              
+              </div>
+            </div>
+          </div>      
+      </div>
+
+     </div>   
+ </body>
+</html>

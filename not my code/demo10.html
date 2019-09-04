@@ -1,0 +1,35 @@
+<!-- WAP to print following pattern 
+*
+**
+***
+****
+*****
+when r=1  c=1
+     r=2  c=2
+	 ........
+	 r=5  c=5
+	 c<=r
+-->
+<html>
+<head>
+<script>
+function printPattern()
+{
+    var r,c,count="";
+for(r=1;r<=5;r++)
+  {
+   for (c=1;c<=r;c++)
+    {
+      count=count+"* ";
+    }
+    count=count+"<br>";	
+  }
+  document.getElementById("para").innerHTML=count;	
+}
+</script>
+</head>
+<body>
+<button onclick="printPattern()">Print Pattern</button>
+<p id="para"></p>
+</body>
+</html>

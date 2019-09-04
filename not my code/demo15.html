@@ -1,0 +1,38 @@
+<!-- Create a HTML page to process object of produc by using JS-->
+<html>
+<head>
+<script>
+function getRecords()
+{
+var p1={PName:"Laptop",UPrice:"32500",Qty:3,totalPrice:function(){
+return (this.UPrice*this.Qty);
+}};
+var p2={PName:"Mouse",UPrice:"400",Qty:8,totalPrice:function(){
+return (this.UPrice*this.Qty);
+}};
+var p3={PName:"Keyboard",UPrice:"800",Qty:15,totalPrice:function(){
+return (this.UPrice*this.Qty);
+}};
+var p4={PName:"Pendrive",UPrice:"500",Qty:10,totalPrice:function(){
+return (this.UPrice*this.Qty);
+}};
+var products=[p1,p2,p3,p4];
+var tb="<table border='1'><tr><th>S.No</th><th>Product Name</th><th>Unit Price</th><th>Quantity</th><th>Total Price</th></tr>";
+var i;
+for(i=0;i<products.length;i++)
+{
+tb=tb+"<tr><td>"+(i+1)+"</td><td>"+products[i].PName+"</td><td>"+products[i].UPrice+"</td><td>"+products[i].Qty+"</td><td>"+
+products[i].totalPrice();
+tb=tb+"</td></tr>";
+}
+tb=tb+"</table>";
+document.getElementById("dv").innerHTML=tb;
+}
+</script>
+</head>
+<body>
+<button onclick="getRecords()">Get Products</button>
+<br/><br/>
+<div id="dv"></div>
+</body>
+</html>

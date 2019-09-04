@@ -1,0 +1,82 @@
+<html>
+    <head>
+      <title>google log-in</title>
+     <style>
+      .all_of_google{
+       font-size: 35px;
+       margin-top: 22px;
+      }
+      .login_box{
+       width: 400px;
+       margin-bottom: 10px;
+       height: 400px;
+       border: 1px solid;
+       box-shadow: 1px 1px 3px 3px grey;
+       background-color: white;
+      }
+      .user_icon{
+       width: 160px;
+       height: 140px;
+       margin-top: 20px;
+       background: url(user.png);
+       background-size: 100% 100%;
+      }
+      form{
+       margin-top: 20px;
+      }
+      input{
+       width: 300px;
+       height: 40px;
+       border-radius: 4px;
+       padding-left: 10px;
+      }
+      #submit_btn{
+       margin-top: 10px;
+       background-color: #0a79df;
+       color: white;
+       font-size: 15px;
+      }
+      #checkbox{
+       width: auto;
+       height: auto;
+       margin-left: -10px;
+      }
+      #help_text{
+       margin-left: 25px;
+      }
+      .create_acc{
+       font-weight: bold;
+       margin-top: 15px;
+      }
+     </style>
+    </head>
+    <body>
+        <center>
+          <div style="font-size: 40px;">
+             <span style="color: blue;">G</span>
+              <span style="color: red;">o</span>
+              <span style="color: yellow;">o</span>
+              <span style="color: blue;">g</span>
+              <span style="color: green;">l</span>
+              <span style="color: blue;">e</span>
+          </div>
+         <p class="all_of_google">One account. All of Google</p>
+         <p style="font-size: 20px">Sign in to continue to Gmail</p> 
+         <div class="login_box">
+         <div class="user_icon"></div>
+          <form>
+          <table cellspacing="0">
+           <tr><input type="email" name="email" placeholder="Email"/></tr>
+           <tr><input type="password" name="pass" placeholder="Password"/></tr>
+           <tr><input type="submit" name="email" value="Signin" id="submit_btn"/></tr>
+           </table>
+           <div style="width: 300px; height: 40px">
+           <label><input type="checkbox" id="checkbox"/>stay signed in</label>
+           <a href="#" id="help_text">Need help?</a>
+            </div>
+          </form>
+         </div>
+         <a href="#" class="create_acc">Create account</a>
+        </center>
+    </body>
+</html>

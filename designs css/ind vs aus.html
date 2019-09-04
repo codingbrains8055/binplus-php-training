@@ -1,0 +1,78 @@
+<html>
+ <head>
+    <title>ind v/s aus</title>
+     <style> 
+     marquee{
+      font-size: 19;
+      color: red;
+     } 
+      .main{
+       width: 500;
+       height: 500;
+       border: 1px solid;
+       margin: 50 0 0 0;
+      }
+      .main p{
+       font-weight: bolder;
+       font-size: 22;
+      }
+      
+      .scr_ln{
+       margin-top: -19;
+       width: 100;
+       height: 4;
+       background-color: black;
+      }
+      .tm_ln{
+       margin-top: 7;
+       width: 250;
+      }
+      .tm_logo{
+       margin: 20;
+       width: 300;
+       height: 200;
+      }
+      .tm{
+       padding: 0 2.5% 0 2.5%;
+       width: 45%;
+       height: 100%;
+       background-color: aqua;
+       background-size: 100% 100%;
+       float: left;
+       position: relative;       
+      }
+      .ind{
+       background-image: url(bcci.png);
+      }
+      .aus{
+       background-image: url(cricaus.png);
+      }    
+      .hr_ln{
+       margin-top: 35;
+       width: 490;
+       height: 4;
+       background-color: black;
+      }
+     </style>
+    </head>
+    
+    <body>
+    <marquee scrollamount ="15" onmouseover="stop()" onmouseout="start()" behavior="alternate">India needs 100 runs in 65 balls to win the match</marquee>
+     <center>
+     <div class="main">
+      <p>Score Card</p>
+      <div class="scr_ln"></div>
+      <div class="tm_logo">
+      <div class="tm ind"></div>
+      <div class="tm aus"></div>
+      </div>
+      <div class="scr_ln tm_ln"></div>
+      <p style="margin-top: 4;">India v/s Australia</p>
+      <div class="hr_ln"></div>
+      <pre style="font-weight: bold; font-size: 17">IND 40/2     Ov. 8.0</pre>
+      <div class="hr_ln"></div>
+      
+      </div>
+    </center>  
+    </body>
+</html>

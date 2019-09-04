@@ -1,0 +1,30 @@
+<html>
+<head>
+<script>
+function getSet()
+{
+var d=document.getElementById("dvfirst");
+var an=document.getElementById("lnk");
+if(an.innerText=="Hide")
+{
+d.style.display="none";
+lnk.innerText="Show";
+}
+else
+{
+d.style.display="block";
+lnk.innerText="Hide";
+}
+}
+</script>
+</head>
+<body>
+<div id="dvfirst" style="height:200px; width:200px; border:2px solid blue; float:left; margin:10px;">
+<img src="image/1.jpg" width="200px"height="200px"/>
+<br/>
+Hello World
+</div>
+<br/></br>
+<a href="#" id="lnk" onclick="getSet()">Hide</a>
+</body>
+</html>

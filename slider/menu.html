@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title> menu</title>
+    <link href="style.css" rel="stylesheet"/>
+    <link href="img/binplus.jpeg" rel="icon"/>
+<script>
+var i=1;
+function slider()
+{
+var slide=document.querySelector(".imgslide");
+slide.src="img/"+i+".jpg";
+i++;
+if(i==6)
+{
+i=1;
+}
+window.setTimeout("slider()",1000);
+}
+</script>
+    </head>
+<body onload = "slider()">
+    <header>
+    <div class="header">
+    <div class="logo"></div>
+        <div class="title">
+            <span style="color:darkred">Binplus</span> <span style="color: blue">Technologies Pvt Ltd</span>
+            <p>Pushing t<span style="font-size: inherit; color: brown;">echnology limits</span></p>
+        </div>
+    </div>
+ <div class="menu">
+    <ul>
+     <li><a href="#">Home</a></li>        
+    <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#slider">Gallery</a></li>
+        <li><a href="#blog">Blog</a></li>
+    </ul>
+    </div>
+    </header>
+    <center>
+    <div class="slider" id="slider">
+     <img src="img/4.jpg" width = 800 height = 600 class="imgslide"/>
+    </div> 
+  </center> 
+    <div id="about"></div>
+    <div id="contact"></div>
+    <div id="blog"></div>
+    </body>
+</html>

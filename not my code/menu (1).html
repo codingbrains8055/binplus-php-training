@@ -1,0 +1,70 @@
+<html>
+<head>
+<script>
+var i=1;
+function slider()
+{
+var slide=document.getElementById("imgslide");
+slide.src="images/"+i+".jpg";
+i++;
+if(i==6)
+{
+i=1;
+}
+window.setTimeout("slider()",1000);
+}
+</script>
+<style>
+#menu
+{
+height:50px;
+width:800px;
+
+}
+#menu ul
+{
+list-style-type:none;
+}
+#menu ul li
+{
+display:inline-block;
+width:120px;
+background-color:orange;
+height:40px;
+padding:10px;
+border-radius:10px;
+}
+#menu ul li a
+{
+text-decoration:none;
+color:red;
+}
+#menu ul li a:hover
+{
+color:white;
+}
+#slider
+{
+height:250px;
+width:800px;
+border:1px solid;
+}
+</style>
+</head>
+<body onload="slider()">
+<div id="menu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html">About Us</a></li>
+<li><a href="index.html">Contact Us</a></li>
+<li><a href="index.html">Gallery</a></li>
+<li><a href="index.html">Blog</a></li>
+</ul>
+</div>
+<br>
+<br>
+<div id="slider">
+<img id="imgslide" height="250px" width="800px"/>
+</div>
+</body>
+</html>

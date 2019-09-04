@@ -1,0 +1,38 @@
+.main{
+    margin: auto;
+    width:400px;
+    height: 450px;
+    background-color: black;
+    border: 2px solid;
+}
+.display{
+    width: 350;
+    height: 40;
+    font-weight: 800;
+    font-size: 22;
+    text-align: right;
+    background-color: #47535e;
+    color: white;
+}
+
+table tr td{
+    margin: 10;
+    width: 70;
+    height: 70;
+}
+table tr td input{
+    width: 70;
+    height: 70;
+    font-weight:900;
+    font-size: 45;
+    font-family:fantasy;
+    color:white;
+    background-color: #2f636f;
+}
+table tr td input:hover{
+    color:2f535e ;
+    background-color: white;
+}
+.op{
+    color: darkblue
+}

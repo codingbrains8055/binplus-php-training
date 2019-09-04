@@ -1,0 +1,56 @@
+<!-- Create a HTML page to validate image file -->
+<html>
+<head>
+<script>
+function check()
+{
+var myfile=document.getElementById("ufile");
+var sp=document.getElementById("sp");
+if(myfile.files!=undefined)
+{
+if(myfile.files[0]!=undefined)
+{
+var fsize=((myfile.files[0].size)/1024)/1024;
+var fname=myfile.value;
+var lastDot=fname.lastIndexOf('.');
+var ext=fname.substring(lastDot+1).toUpperCase();
+if(ext=="PNG" || ext=="JPG" || ext=="JPEG")
+{
+if(fsize<=1)
+{
+sp.innerText="File Is Valid";
+ sp.style.color = "green"
+}
+else
+{
+sp.innerText="File is Too Large.";
+}
+}
+else
+{
+sp.innerText="Invalid file formate.";
+}
+}
+else
+{
+sp.innerText="Please select a file.";
+}
+}
+else
+{
+sp.innerText="HTML 5 is not supported"
+}
+}
+function cls()
+{
+document.getElementById("sp").innerText="";
+}
+</script>
+</head>
+<body>
+Select Your Photo: <input type="file" id="ufile" onclick="cls()"/><!---we can use here onchange or onblur event-->
+<span id="sp" style="color:red"></span>
+<br/><br/>
+<button onclick="check()">Check Image</button>
+</body>
+</html>

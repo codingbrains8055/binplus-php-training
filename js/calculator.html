@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>calculator</title>
+    <script>
+    var num1;
+var num2;
+var result;
+    function add(){
+        num1 = parseInt(document.getElementById("n1").value);
+        num2 = parseInt(document.getElementById("n2").value;
+            var r =document.getElementById("res");
+result = num1 + num2;
+        r.innerHTML = result;
+       /* alert(result);*/
+}
+     function subs(){
+        num1 = parseInt(document.getElementById("n1").value);
+        num2 = parseInt(document.getElementById("n2").value);
+result = num1 - num2;
+        alert(result);
+}
+      function mult(){
+        num1 = parseInt(document.getElementById("n1").value);
+        num2 = parseInt(document.getElementById("n2").value);
+result = num1 * num2;
+        alert(result);
+}
+     function div(){
+        num1 = parseInt(document.getElementById("n1").value);
+        num2 = parseInt(document.getElementById("n2").value);
+result = num1 / num2;   
+        alert(result);
+}       
+    </script>
+    </head>
+    
+    <body>
+<form>
+    <input type="number" name="num1" placeholder="first number" id="n1"/><br /><br />
+        <input type="number" name="num2" placeholder="second number" id="n2"/><br /><br />
+            <button type="submit" onclick="add()">add</button>
+            <button type="submit" onclick="subs()">substract</button>
+            <button type="submit" onclick="mult()">multiply</button>
+            <button type="submit" onclick="div">divide</button>
+        </form>
+        <p id="res"></p>
+    </body>
+</html>
