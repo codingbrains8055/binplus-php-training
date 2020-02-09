@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+}
+.main_top{
+    width: auto;
+    height: 100%;
+    background-image: url(imgs/aribnbhome.jpg);
+    background-size: 100% 100%;
+}
+.check{
+    background-color: red;
+}
+
+div ul li{
+    margin-left: 25;
+}
+#navbarSupportedContent{
+    margin-left: 45%;
+    float: right;
+    position: relative;
+}
+
+form{
+    margin:30 0 0 120;
+    color: dimgrey;
+    font-weight:600;
+    font-size: 13;
+}
+form .card-header{
+    border: 0;
+    background-color: white;
+}
+form h2{
+    color:#
+    font-weight: bolder;
+    background-color: white;
+    border: 0;
+}
+
+.btn{
+    margin-left:75%;
+}
+.card-body{
+    margin-top: 0;
+}

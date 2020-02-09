@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>navbar</title>
+    <link href="Bootstrap%20kit/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="Bootstrap%20kit/js/bootstrap.min.js" rel="text/javascript"/>
+    <script>
+     function activate(rcvdid){
+         document.getElementById(rcvdid).className = "active"
+     }
+    </script>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-light bg-light">
+             <a class="navbar-brand" href="#">
+    <img src="cloapedia/cloapedia/images/mylogo.png" width="60" height="60" alt="">MyKart
+  </a> 
+       <ul class="navbar nav flex-column flex-sm-row nav-pills justify-content-end">
+         <li class="nav-item"><a class="nav-link active" href="#">home</a></li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Dropdown</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+         </li>
+        <li class="nav-item"><a class="nav-link" href="#">sign up</a></li>
+        <li class="nav-item"><a class="nav-link disabled" onmouseover="activate('act')" href="#" id="act">log in</a></li> 
+        </ul>
+        </nav>
+        <div style="width: auto; height: 1700; background-color:"></div>
+    </body>
+</html>

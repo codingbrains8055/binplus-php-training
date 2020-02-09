@@ -1,0 +1,14 @@
+.give_margin{
+    margin-top:none
+}
+.learn_to_code{
+    color: black;
+    float: none;
+    flex: none;
+    margin: auto;
+}
+.errormsg{
+    font-size: 20px;
+    color: red;
+    font-style: italic;
+}
