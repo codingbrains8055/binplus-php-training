@@ -1,10 +1,27 @@
+<?php session_start();?>
 <html>
 <head>
-    
-    </head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Home</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/vendors/puse-icons-feather/feather.css">
+  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="assets/vendors/morris.js/morris.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom_style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
+</head>
 <body>
     <header>
-<?php include ('includes/header.php'); ?>    
+<?php include ('assets/includes/header.php'); ?>    
     </header>
 <div class="container">
     <div class="container-scroller">
@@ -44,9 +61,6 @@
 
     </div>
     </div>
-<?php include ('includes/footer.php')?>
+<?php include ('assets/includes/footer1.php')?>
     </body>
 </html>
-
-<div class="main-panel">
-        </div>

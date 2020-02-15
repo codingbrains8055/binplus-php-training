@@ -1,3 +1,4 @@
+<?php session_start();?>
 <html>
 <head>
   <!-- Required meta tags -->
@@ -19,45 +20,11 @@
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 <body>
-<div class="container-fluid">
-     <nav class="navbar default-layout sticky-top col-lg-12 col-12 flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/brand-logo/leaning_adda_logo.PNG" height=150% width=150%></a>
-<!--        <a class="navbar-brand brand-logo-mini" href="index.html"></a>-->
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-<!--
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="mdi mdi-menu"></span>
-        </button>
--->
-        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-          <li class="nav-item active">
-            <a href="#" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Courses</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"><i class="mdi mdi-bookmark-plus-outline"></i>Discussion</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item d-none d-xl-inline-block">
-            <a class="nav-link" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="mr-3">Hello, User !</span><img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="Profile image">
-            </a>
-          </li>
-          <li><a href="login.html"><button type="button" class="btn btn-dark btn-rounded btn-fw">Log In</button></a></li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>   
-        </div>
-    <div class="learn_to_code">
-        <h4>Learn To Code For Free</h4>
-        <h5>Free, Fun affective</h5>
-        <a href="login.html"><button type="button" class="btn btn-inverse-secondary btn-rounded btn-fw">Start Learnig Now</button></a>
-        </div>
-    </nav>   
-    </div>
+<header>
+ <?php 
+   include('assets/includes/header.php');
+?>  
+</header>
 <div class="container">
  <div class="container-fluid">
      <div class="row justify-content-center">
@@ -101,5 +68,8 @@
 
  </div>   
     </div>
+<footer>
+<?php include('assets/includes/footer1.php')?>    
+</footer>
     </body>
 </html>

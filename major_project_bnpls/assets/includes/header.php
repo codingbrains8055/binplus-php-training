@@ -1,50 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Radiant Admin Premium Bootstrap Admin Dashboard Template</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="vendors/puse-icons-feather/feather.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <link rel="stylesheet" href="vendors/morris.js/morris.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
-</head>
-
-<body>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" >
-        <a class="navbar-brand brand-logo" href="index.php"></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"></a>
+<?php 
+require('assets/includes/connection.php');
+if(isset($_SESSION['user'])){
+    $header_query = "select username from user where email = '{$_SESSION['user']}'";
+    $header_query_result = mysqli_query($con, $header_query) or die(mysqli_error($con));
+    $header_query_result_array =  mysqli_fetch_array($header_query_result);
+    if($header_query_result_array != NULL){
+        $username = $header_query_result_array['username'];
+    }else {
+        $username = "user";
+    }
+}
+?>
+<div class="container-fluid">
+     <nav class="navbar default-layout sticky-top col-lg-12 col-12 flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="index.php"><img src="assets/images/brand-logo/leaning_adda_logo.PNG" height=150% width=150%></a>
+<!--        <a class="navbar-brand brand-logo-mini" href="index.html"></a>-->
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
+<!--
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
+-->
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">Schedule <span class="badge badge-primary ml-1">New</span></a>
-          </li> -->
-          <!-- <li class="nav-item active">
-            <a href="#" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Reports</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link"><i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
-          </li> -->
+          <li class="nav-item active">
+            <a href="#" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Courses</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="mdi mdi-bookmark-plus-outline"></i>Discussion</a>
+          </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
+<?php if(isset($_SESSION['user'])){?>
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
               <i class="mdi mdi-message-text-outline"></i>
@@ -155,15 +143,12 @@
               </a>
             </div>
           </li>
-          <li class="nav-item d-none d-lg-block color-setting">
-            <a class="nav-link" href="#">
-              <i class="mdi mdi-tune"></i>
-            </a>
-          </li>
+<?php }?>
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="mr-3">Hello, Sebastian !</span><img class="img-xs rounded-circle" src="images/faces/face1.jpg" alt="Profile image">
+              <span class="mr-3">Hello, <?php if(isset($_SESSION['user'])){echo $username;}else{echo "User";}?> !</span><img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="jrofile image">
             </a>
+<?php if(isset($_SESSION['user'])){?>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <a class="dropdown-item p-0">
                 <div class="d-flex border-bottom">
@@ -172,107 +157,44 @@
                   <div class="py-3 px-4 d-flex align-items-center justify-content-center"><i class="mdi mdi-alarm-check mr-0 text-gray"></i></div>
                 </div>
               </a>
-              <a  href="manage-accound.php" class="dropdown-item mt-2">
+              <a class="dropdown-item mt-2" href="manage_account.php">
                 Manage Accounts
               </a>
-              <a href="change-password.php" class="dropdown-item">
-                Change Password
-              </a>
-              <a href="edit-profile.php" class="dropdown-item">
-                Edit profile
-              </a>
               <a class="dropdown-item">
+                Dashboard
+              </a>
+              <a class="dropdown-item" href="logout.php">
                 Sign Out
               </a>
             </div>
+<?php }else{?>             
+              
+           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <a class="dropdown-item p-0">
+                <div class="d-flex border-bottom">
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center"><i class="mdi  mr-0 text-gray"></i></div>
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right"><i class="mdi mr-0 text-gray"></i></div>
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center"><i class="mdi  mr-0 text-gray"></i></div>
+                </div>
+              </a>
+              <a class="dropdown-item" href="login.php">
+                Sign In
+              </a>
+            </div>
+<?php }?>             
+              
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <div id="theme-settings" class="settings-panel">
-          <i class="settings-close mdi mdi-close"></i>
-          <div class="d-flex align-items-center justify-content-between border-bottom">
-            <p class="settings-heading font-weight-bold border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Template Skins</p>
-          </div>
-          <div class="sidebar-bg-options selected" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
-          <div class="sidebar-bg-options" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
-          <p class="settings-heading font-weight-bold mt-2">Header Skins</p>
-          <div class="color-tiles mx-0 px-4">
-            <div class="tiles primary"></div>
-            <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
-            <div class="tiles pink"></div>
-            <div class="tiles info"></div>
-            <div class="tiles dark"></div>
-            <div class="tiles default"></div>
-          </div>
+        </button>   
         </div>
-      </div>
-      <div id="right-sidebar" class="settings-panel">
-        <i class="settings-close mdi mdi-close"></i>
-        <div class="d-flex align-items-center justify-content-between border-bottom">
-          <p class="settings-heading font-weight-bold border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+<?php if(!isset($_SESSION['user'])){?>
+    <div class="learn_to_code">
+        <h4>Learn To Code For Free</h4>
+        <h5>Free, Fun affective</h5>
+        <a href="login.php"><button type="button" class="btn btn-inverse-secondary btn-rounded btn-fw">Start Learnig Now</button></a>
         </div>
-        <ul class="chat-list">
-          <li class="list active">
-            <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
-            <div class="info">
-              <p>Thomas Douglas</p>
-              <p>Available</p>
-            </div>
-            <small class="text-muted my-auto">19 min</small>
-          </li>
-          <li class="list">
-            <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
-            <div class="info">
-              <div class="wrapper d-flex">
-                <p>Catherine</p>
-              </div>
-              <p>Away</p>
-            </div>
-            <div class="badge badge-success badge-pill my-auto mx-2">4</div>
-            <small class="text-muted my-auto">23 min</small>
-          </li>
-          <li class="list">
-            <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
-            <div class="info">
-              <p>Daniel Russell</p>
-              <p>Available</p>
-            </div>
-            <small class="text-muted my-auto">14 min</small>
-          </li>
-          <li class="list">
-            <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
-            <div class="info">
-              <p>James Richardson</p>
-              <p>Away</p>
-            </div>
-            <small class="text-muted my-auto">2 min</small>
-          </li>
-          <li class="list">
-            <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
-            <div class="info">
-              <p>Madeline Kennedy</p>
-              <p>Available</p>
-            </div>
-            <small class="text-muted my-auto">5 min</small>
-          </li>
-          <li class="list">
-            <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
-            <div class="info">
-              <p>Sarah Graves</p>
-              <p>Available</p>
-            </div>
-            <small class="text-muted my-auto">47 min</small>
-          </li>
-        </ul>
-      </div>
-      <!-- partial -->
+<?php }?>
+    </nav>   
+    </div>

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <html>
 <head>
   <!-- Required meta tags -->
@@ -19,45 +20,9 @@
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 <body>
-<div class="container-fluid">
- <!-- partial:partials/_navbar.html -->
-         <nav class="navbar default-layout col-lg-12 col-12 flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/brand-logo/leaning_adda_logo.PNG" height=150% width=150%></a>
-<!--        <a class="navbar-brand brand-logo-mini" href="index.html"></a>-->
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-<!--
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="mdi mdi-menu"></span>
-        </button>
--->
-        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-          <li class="nav-item active">
-            <a href="#" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Courses</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"><i class="mdi mdi-bookmark-plus-outline"></i>Discussion</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item d-none d-xl-inline-block">
-            <a class="nav-link" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="mr-3">Hello, User !</span><img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="Profile image">
-            </a>
-          </li>
-          <li><a href="login.html"><button type="button" class="btn btn-dark btn-rounded btn-fw">Log In</button></a></li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>   
-        </div>
-    <div class="learn_to_code">
-        <h4>Learn To Code For Free</h4>
-        <h5>Free, Fun affective</h5>
-        <a href="login.html"><button type="button" class="btn btn-inverse-secondary btn-rounded btn-fw">Start Learnig Now</button></a>
-        </div>
-    </nav>    </div>
+<header>
+<?php include('assets/includes/header.php')?>    
+</header>
 <div class="container">
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -66,11 +31,11 @@
           <div class="col-lg-4 mx-auto">
            <h2 class="text-center mb-4">Log In</h2>
             <div class="auto-form-wrapper">
-              <form action="#">
+              <form action="php_script/login_script.php" method="post">
                 <div class="form-group">
                   <label class="label">Username</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" placeholder="Username" name="email">
                     <div class="input-group-append">
                       <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
                     </div>
@@ -79,7 +44,7 @@
                 <div class="form-group">
                   <label class="label">Password</label>
                   <div class="input-group">
-                    <input type="password" class="form-control" placeholder="*********">
+                    <input type="password" class="form-control" placeholder="*********" name="password">
                     <div class="input-group-append">
                       <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
                     </div>
@@ -102,15 +67,16 @@
                 </div>
                 <div class="text-block text-center my-3">
                   <span class="text-small font-weight-semibold">Not a member ?</span>
-                  <a href="signup.html" class="text-black text-small">Create new account</a>
+                  <a href="signup.php" class="text-black text-small">Create new account</a>
                 </div>
               </form>
             </div>
+              <footer>
             <ul class="auth-footer">
               <li><a href="#">Conditions</a></li>
               <li><a href="#">Help</a></li>
               <li><a href="#">Terms</a></li>
-            </ul>
+            </ul> </footer>
             <p class="footer-text text-center">copyright © 2018 Bootstrapdash. All rights reserved.</p>
           </div>
         </div>
@@ -122,14 +88,9 @@
     </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/misc.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+<footer>
+<?php include('assets/includes/footer1.php')?>    
+</footer>
   <!-- endinject -->    
     </body>
 </html>

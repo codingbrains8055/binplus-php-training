@@ -2,12 +2,16 @@ function matchpasswords() {
     var pass = document.querySelector("#password").value;
     var conf_pass = document.querySelector("#conf_password").value;
     if(pass != conf_pass){
-        var node = document.createTextNode("passwords do not match");
+       
         var errorSpan = document.querySelector("#error");
-        errorSpan.append(node);
+        errorSpan.innerHTML="passwords do not match";
 
     }else{
         document.querySelector("#error").innerHTML = '';
-        var node = document.createTextNode(" ")
     }
+}
+
+function checkthebox() {
+    var spn = document.querySelector("#checkit");
+    spn.innerHTML = '<i class="mdi mdi-checkbox-multiple-marked-circle"></i>';
 }
