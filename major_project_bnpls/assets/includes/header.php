@@ -146,7 +146,7 @@ if(isset($_SESSION['user'])){
 <?php }?>
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="mr-3">Hello, <?php if(isset($_SESSION['user'])){echo $username;}else{echo "User";}?> !</span><img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="jrofile image">
+              <span class="mr-3">Hello, <?php if(isset($_SESSION['user'])){echo $username;}else{echo "User";}?> !</span><img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="profile image">
             </a>
 <?php if(isset($_SESSION['user'])){?>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -160,7 +160,7 @@ if(isset($_SESSION['user'])){
               <a class="dropdown-item mt-2" href="manage_account.php">
                 Manage Accounts
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="dashboard.php">
                 Dashboard
               </a>
               <a class="dropdown-item" href="logout.php">

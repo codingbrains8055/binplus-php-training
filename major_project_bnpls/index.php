@@ -27,7 +27,8 @@
 </header>
 <div class="container">
  <div class="container-fluid">
-     <div class="row justify-content-center">
+<?php if(isset($_SESSION['user'])){ ?>
+      <div class="row justify-content-center">
       <div class="col-md-4 col-sm-12">
          <div class="card" style="width: 18rem;">
   <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
@@ -39,7 +40,7 @@
 <button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button>
   </div>
 </div>
-         </div>
+</div>
       <div class="col-md-4 col-sm-12">
          <div class="card" style="width: 18rem;">
   <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
@@ -65,6 +66,124 @@
 </div>
          </div>
      </div>
+     <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 1</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button>
+  </div>
+</div>
+</div>
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 2</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button>
+  </div>
+</div>
+         </div>
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 3</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button>
+  </div>
+</div>
+         </div>
+     </div>
+     <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 1</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button>
+  </div>
+</div>
+</div>
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 2</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button>
+  </div>
+</div>
+         </div>
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 3</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button>
+  </div>
+</div>
+         </div>
+     </div>   
+<?php }else{ ?>
+      <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 1</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<a href="login.php"><button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button></a>
+  </div>
+</div>
+</div>
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 2</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<a href="login.php"><button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button></a>
+  </div>
+</div>
+         </div>
+      <div class="col-md-4 col-sm-12">
+         <div class="card" style="width: 18rem;">
+  <img src="assets/images/brand-logo/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Course 3</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+<a href="login.php"><button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Take This Course</button></a>
+  </div>
+</div>
+         </div>
+     </div>    
+<?php }     
+?>
+     
 
  </div>   
     </div>

@@ -41,7 +41,7 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
                 <div class="col-md-12">
                 <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Profile</h4>
+                  <center><h4 class="card-title">Profile</h4></center>
                   <!-- <p class="card-description">
                     Basic form elements
                   </p> -->

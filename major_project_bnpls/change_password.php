@@ -35,18 +35,18 @@
                     Basic form elements
                   </p> -->
                   <br>
-                 
+                 <form class="form-sample" action="php_script/change_pass_script.php" method="post">
                     <div class="form-group">
                       <label for="exampleInputPassword4"> Current Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleInputPassword4" name="pass" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword4"> ChangePassword</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleInputPassword4" name="new_pass" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword4"> Conform Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleInputPassword4" name="conf_pass" placeholder="Password">
                     </div>
                   
                    
