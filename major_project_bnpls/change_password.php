@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php session_start();
+if(isset($_SESSION['user'])){
+?>
 <html>
 <head>
   <!-- Required meta tags -->
@@ -64,3 +66,6 @@
 <?php include ('assets/includes/footer1.php')?>
     </body>
 </html>
+<?php }else{
+ header('location:index.php');   
+}?>

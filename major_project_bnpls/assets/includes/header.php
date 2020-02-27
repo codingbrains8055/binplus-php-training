@@ -22,10 +22,10 @@ if(isset($_SESSION['user'])){
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
--->
+--> 
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
           <li class="nav-item active">
-            <a href="#" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Courses</a>
+            <a href="courses.php" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Courses</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link"><i class="mdi mdi-bookmark-plus-outline"></i>Discussion</a>
@@ -162,6 +162,9 @@ if(isset($_SESSION['user'])){
               </a>
               <a class="dropdown-item" href="dashboard.php">
                 Dashboard
+              </a>
+              <a class="dropdown-item" href="cart.php">
+                Cart
               </a>
               <a class="dropdown-item" href="logout.php">
                 Sign Out

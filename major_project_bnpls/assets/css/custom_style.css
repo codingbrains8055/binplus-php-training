@@ -2,7 +2,7 @@
     margin-top:none
 }
 .learn_to_code{
-    color: black;
+    color:aqua;
     float: none;
     flex: none;
     margin: auto;
@@ -11,4 +11,8 @@
     font-size: 20px;
     color: red;
     font-style: italic;
+}
+.index_body{
+    color: aqua;
+    background-color: black;
 }

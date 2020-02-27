@@ -1,4 +1,5 @@
 <?php session_start();
+if(isset($_SESSION['user'])){
 require('assets/includes/connection.php');
 $userinfo_query = "select * from user where email =  '{$_SESSION['user']}'";
 $userinfo_query_result = mysqli_query($con, $userinfo_query) or die(mysqli_error($con));
@@ -86,3 +87,6 @@ $info = $userinfo_query_result_array;
 <?php include ('assets/includes/footer1.php')?>
 </body>
 </html>
+<?php }else{
+    header('location:index.php');
+}?>
