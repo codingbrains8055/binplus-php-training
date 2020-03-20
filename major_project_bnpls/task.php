@@ -6,8 +6,7 @@ if(isset($_SESSION['user'])){
     $user_id = mysqli_fetch_array($user_query_result);
     $user_id = $user_id['user_id'];
     $task_query = "select * from task";
-    $task_query_result = mysqli_query($con, $task_query) or die(mysqli_error($con));
-    
+    $task_query_result = mysqli_query($con, $task_query) or die(mysqli_error($con));   
 }
 ?>
 
