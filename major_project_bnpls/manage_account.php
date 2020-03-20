@@ -36,9 +36,8 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
     
       
 <!--        <div class="row w-100">-->
-        <div class="content-wrapper">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                 <div class="card">
                 <div class="card-body">
                   <center><h4 class="card-title">Profile</h4></center>
@@ -88,18 +87,11 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
               </div>
                 </div>
             </div>
-</div> 
-
-            <p class="footer-text text-center">copyright © 2018 Bootstrapdash. All rights reserved.</p>
-
       
       <!-- content-wrapper ends -->
     <!-- page-body-wrapper ends -->
     </div>
     </div>    
-
-    
-
     </body>
 <?php include('assets/includes/footer1.php')?>
 </html>

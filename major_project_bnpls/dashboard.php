@@ -8,6 +8,8 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
 $fetch_course_query = "select * from courses  RIGHT OUTER JOIN user_course ON courses.course_id = user_course.course_id LEFT OUTER JOIN user ON user_course.user_id = user.user_id"; //where issued_books.iss_book_id ='$rid'";
 $fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysqli_error($con));
 
+$fetch_task_query = "select * from task  RIGHT OUTER JOIN user_task ON task.task_id = user_task.task_id LEFT OUTER JOIN user ON user_task.user_id = user.user_id"; //where issued_books.iss_book_id ='$rid'";
+$fetch_task_query_result = mysqli_query($con, $fetch_task_query) or die(mysqli_error($con));
 ?>
 <html>
 <head>
@@ -42,7 +44,7 @@ $fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysq
 <!--        <div class="row w-100">-->
 <div class="content-wrapper">
  <div class="row">
-   <div class="left col-md-1"><img class="img-md rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="jrofile image">
+   <div class="left col-md-1"><img class="img-md rounded-circle" src="profile_pic/<?php echo $userinfo_query_result_array['profile_pic'];?>" alt="profile image"> <a href="change_profile_pic.php">change</a>
      </div> 
    <div class="right col-md-11">
        <span><h2><?php echo $userinfo_query_result_array['first_name']." ".$userinfo_query_result_array['last_name'];?></h2><br><span>Level <?php echo $userinfo_query_result_array['level']?></span><br><span><?php echo $userinfo_query_result_array['experience_point'];?> xp</span></span> 
@@ -61,7 +63,7 @@ $fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysq
                     <thead>
                       <tr>
                         <th>
-                          Course
+                          #
                         </th>
                         <th>
                           Course Name
@@ -72,16 +74,19 @@ $fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysq
                         <th>
                           Score
                         </th>
+                          <th>
+                          Action
+                          </th>
                       </tr>
                     </thead>
                     <tbody>
-       <?php while($print = mysqli_fetch_array($fetch_course_query_result)){?>
+       <?php $count = 1; while($print = mysqli_fetch_array($fetch_course_query_result)){?>
                       <tr>
                         <td class="py-1">
-                          <img src="assets/images/faces-clipart/pic-1.png" alt="image"/>
+                           <?php echo $count;?>
                         </td>
                         <td>
-                          <?php echo($print['type']);?>
+                          <?php echo($print['course_name']);?>
                         </td>
                         <td>
                           <div class="progress">
@@ -91,8 +96,11 @@ $fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysq
                         <td>
                          <?php echo($print['score']);?>
                         </td>
+                        <td>
+                         <a href="#"><button class="btn btn-primary">Continue<i class="mdi mdi-arrow-right-circle"></i></button></a>
+                        </td>
                       </tr>
-<?php } ?>
+<?php $count++; } ?>
                     </tbody>
                   </table>
                 </div>
@@ -101,25 +109,61 @@ $fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysq
      </div>
 </div>
 </div> 
+    
 <div class="content-wrapper">
  <div class="row">
    <div class="left col-md-12"><h3>My Tasks</h3>
      </div> 
    <div class="right col-md-12">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          #
+                        </th>
+                        <th>
+                          Task Name
+                        </th>
+                        <th>
+                          Xp
+                        </th>
+                        <th>
+                         Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+       <?php $count = 1; while($print = mysqli_fetch_array($fetch_task_query_result)){?>
+                      <tr>
+                        <td class="py-1">
+                           <?php echo $count;?>
+                        </td>
+                        <td>
+                          <?php echo($print['task_name']);?>
+                        </td>
+                        <td>
+                          <?php echo($print['xp']);?>
+                        </td>
+                        <td> 
+                           <a href="#"><button class="btn btn-primary">Complete Task</button> </a>
+                        </td>
+                      </tr>
+<?php $count++; } ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div> 
      </div>
 </div>
 </div>     
-
-<p class="footer-text text-center">copyright © 2018 Bootstrapdash. All rights reserved.</p>
-
-      
       <!-- content-wrapper ends -->
     <!-- page-body-wrapper ends -->
     </div>
     </div>    
-
-    
-
     </body>
 <?php include('assets/includes/footer1.php');?>
 </html>

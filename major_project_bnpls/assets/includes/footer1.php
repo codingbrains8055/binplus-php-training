@@ -1,4 +1,5 @@
   <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="assets/js/alert.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
 
@@ -8,6 +9,9 @@
   <script src="../js/settings.js"></script>
   <script src="../js/todolist.js"></script>
   <script src="../js/custom_js.js"></script>
+<script src="../vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="../vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="../js/data-table.js"></script>
   <script src="../js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
@@ -25,7 +29,7 @@
   <script src="../js/misc.js"></script>
   <script src="../js/settings.js"></script>
   <script src="../js/todolist.js"></script>
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <script src="../vendors/sweetalert/sweetalert.min.js"></script>

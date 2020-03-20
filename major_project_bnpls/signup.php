@@ -31,69 +31,77 @@
           <div class="col-lg-4 mx-auto">
             <h2 class="text-center mb-4">Register</h2>
             <div class="auto-form-wrapper">
-              <form action="php_script/signup_script.php" method="post">
-                  
+              <form class="cmxform" action="php_script/signup_script.php" method="post" enctype="multipart/form-data">
+                  <?php if(isset($_GET['msg'])){
+                 echo '<span style="color:red; font-size:10px">Fields should not be empty</span>';
+} ?> 
                 <div class="form-group">
-                  <div class="input-group">
+                  <div class="input">
                     <input type="email" class="form-control" placeholder="E-mail" name="email">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
-                    </div>
                   </div>
+                   <?php if(isset($_GET['email_msg'])){ ?>
+                      <span class="errormsg"><?php echo $_GET['email_msg'];?></span>
+                  <?php  } ?>
                 </div>
 
                 <div class="form-group">
-                  <div class="input-group">
+                  <div class="input">
                     <input type="number" class="form-control" placeholder="Mobile Number" name="mobile">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
-                    </div>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="input-group">
+                  <div class="input">
                     <input type="text" class="form-control" placeholder="First Name" name="first_name">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
-                    </div>
                   </div>
                 </div>                  
                 
                 <div class="form-group">
-                  <div class="input-group">
+                  <div class="input">
                     <input type="text" class="form-control" placeholder="Last Name" name="last_name">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
-                    </div>
                   </div>
-                </div>                  
+                  </div>
+
+                <div class="form-group">
+                  <div class="input">
+                    <input type="file" class="form-control" placeholder="profile picture" name="profile_pic">
+                      <small>Your profile picture</small>
+                  </div>
+                   <?php if(isset($_GET['img_size_msg'])){ ?>
+                      <span class="errormsg"><?php echo $_GET['img_size_msg'];?></span>
+                  <?php  } ?>
+                   <?php if(isset($_GET['img_msg'])){ ?>
+                      <span class="errormsg"><?php echo $_GET['img_msg'];?></span>
+                  <?php  } ?>
+                </div>
                   
                 <div class="form-group">
-                  <div class="input-group">
+                  <div class="input">
                     <input type="text" class="form-control" placeholder="Username" name="username">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
-                    </div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" name="pass" id="password">
-                    <div class="input-group-append">
-                      <span class="input-group-text" id="checkit"><i class="mdi mdi-check-circle-outline"></i></span>
-                    </div>
+                  <div class="input">
+                    <input type="password" class="form-control" placeholder="Password" name="pass" id="password" oninput="checkpass()">
                   </div>
+                    <span id="pass_strength" class="errormsg"></span>
+                   <?php if(isset($_GET['pass_lenght_msg'])){ ?>
+                      <span class="errormsg"><?php echo $_GET['pass_lenght_msg'];?></span>
+                  <?php  } ?>
+                   <?php if(isset($_GET['pass_msg'])){ ?>
+                      <span class="errormsg"><?php echo $_GET['pass_msg'];?></span>
+                  <?php  } ?>
+                    
                 </div>
                 <div class="form-group">
-                  <div class="input-group">
+                  <div class="input">
                     <input type="password" class="form-control" placeholder="Confirm Password" name="conf_pass" id="conf_password" onBlur="matchpasswords()">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
-                    </div>
                   </div>
                 </div>
-                  <div class="input-group">
+                   <?php if(isset($_GET['pass_match_msg'])){ ?>
+                      <span class="errormsg"><?php echo $_GET['pass_match_msg'];?></span>
+                  <?php  } ?>
+                  <div class="input">
                       <span id="error" class="errormsg"></span>
                   </div>
 <!--
@@ -110,7 +118,7 @@
                   <button class="btn btn-primary submit-btn btn-block">Register</button>
                 </div>
                 <div class="text-block text-center my-3">
-                  <span class="text-small font-weight-semibold">Already have and account ?</span>
+                  <span class="text-small font-weight-semibold">Already have an account ?</span>
                   <a href="login.php"s class="text-black text-small">Login</a>
                 </div>
               </form>
@@ -126,7 +134,17 @@
   <!-- container-scroller -->
   <!-- plugins:js -->
 <footer>
-<?php include('assets/includes/footer1.php')?>    
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+<script src="assets/vendors/jquery-validation/jquery.validate.min.js"></script>
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/todolist.js"></script>
+<script src="assets/js/form-validation.js"></script>
+<script src="assets/js/bt-maxLength.js"></script>
+<script src="assets/js/custom_js.js"></script>  
 </footer>
 
   

@@ -2,17 +2,17 @@
     margin-top:none
 }
 .learn_to_code{
-    color:aqua;
+    color:black;
     float: none;
     flex: none;
     margin: auto;
 }
 .errormsg{
-    font-size: 20px;
+    font-size: 10px;
     color: red;
     font-style: italic;
 }
 .index_body{
-    color: aqua;
-    background-color: black;
+    color: black;
+    background-image: url(../images/custom_image/%E2%80%94Pngtree%E2%80%94cartoon%20cute%20pink%20background%20poster_188378.jpg)
 }

@@ -42,7 +42,7 @@ $info = $userinfo_query_result_array;
                     Basic form elements
                   </p> -->
                   <br>
-                  <form class="forms-sample" action="php_script/edit_profile_script.php" method="post">
+                  <form class="forms-sample" action="php_script/edit_profile_script.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputName1">First Name</label>
                       <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name" name="firstname" value="<?php echo $info['first_name']?>">
@@ -54,7 +54,7 @@ $info = $userinfo_query_result_array;
                     <div class="form-group">
                       <label for="exampleInputEmail3">Username</label>
                       <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Email" name="username" value="<?php echo $info['username']?>" >
-                    </div>
+                      </div>
                     <!-- <div class="form-group">
                       <label>File upload</label>
                       <input type="file" name="img[]" class="file-upload-default">
@@ -73,7 +73,7 @@ $info = $userinfo_query_result_array;
                       <label for="exampleTextarea1">Textarea</label>
                       <textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
                     </div> -->
-                   <a href="edit-profile.php"> <button type="submit" class="btn btn-success mr-2">Update</button></a>
+                   <button type="submit" class="btn btn-success mr-2">Update</button>
                    <!-- <a href="change-password.php"><button class="btn btn-light"></button></a> -->
                   </form>                 
                 </div>

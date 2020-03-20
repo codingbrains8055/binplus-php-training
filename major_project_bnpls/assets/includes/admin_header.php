@@ -1,11 +1,8 @@
 <?php 
 require('assets/includes/connection.php');
-if(isset($_SESSION['user'])){
-    $header_query = "select * from user where email = '{$_SESSION['user']}'";
-    $header_query_result = mysqli_query($con, $header_query) or die(mysqli_error($con));
-    $header_query_result_array =  mysqli_fetch_array($header_query_result);
-    if($header_query_result_array != NULL){
-        $username = $header_query_result_array['username'];
+if(isset($_SESSION['admin'])){
+    if(isset($_SESSION['admin'])){
+        $username = $_SESSION['admin'];
     }else {
         $username = "user";
     }
@@ -13,16 +10,9 @@ if(isset($_SESSION['user'])){
 ?>
 <div class="container-fluid">
      <nav class="navbar default-layout sticky-top col-lg-12 col-12 flex-row">
-         <!-- Image and text -->
-  <a class="navbar navbar-brand brand-logo" href="index.php">
+  <a class="navbar navbar-brand brand-logo" href="admin_dashboard.php">
     <img src="assets/images/brand-logo/leaning_adda_logo.PNG" width="200" height="70" class="d-inline-block align-top" alt="">
   </a>
-<!--
-      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" >
-        <a class="navbar-brand brand-logo" href="index.php"></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"></a>
-      </div>
--->
       <div class="navbar-menu-wrapper d-flex align-items-center">
 <!--
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -31,34 +21,26 @@ if(isset($_SESSION['user'])){
 --> 
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
           <li class="nav-item active">
-              <?php if(isset($_SESSION['user'])){ ?>
-    <a href="courses.php" class="nav-link"><i class="mdi mdi-book-open"></i>Courses</a>
+              <?php if(isset($_SESSION['admin'])){ ?>
+<!--    <a href="courses.php" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Courses</a>-->
 <?php }else{ ?>
-<a href="login.php" class="nav-link"><i class="mdi mdi-book-open"></i>Courses</a>   
-<?php }?> ?>  
+<!--<a href="login.php" class="nav-link"><i class="mdi mdi-elevation-rise"></i>Courses</a>   -->
+<?php }?> ?>
+            
           </li>
-          <li class="nav-item active">
-              <?php if(isset($_SESSION['user'])){ ?>
-    <a href="task.php" class="nav-link"><i class="mdi mdi-setting"></i>Task</a>
-<?php }else{ ?>
-<a href="login.php" class="nav-link"><i class="mdi mdi-setting"></i>Task</a>   
-<?php }?> ?>  
+          <li class="nav-item">
+<!--            <a href="#" class="nav-link"><i class="mdi mdi-bookmark-plus-outline"></i>Discussion</a>-->
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-<?php if(isset($_SESSION['user'])){?>
+<?php if(isset($_SESSION['admin'])){?>
           <li class="nav-item dropdown">
 <?php }?>
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="mr-3"><i class="mdi mdi-hand"></i>Hello! <?php if(isset($_SESSION['user'])){echo $username;}else{echo "User";}?> !</span>
-                <?php if(isset($_SESSION['user'])){ ?>
-                <img class="img-xs rounded-circle" src="<?php echo "profile_pic/".$header_query_result_array['profile_pic']?>" alt="profile image">
-<?php }else{ ?>
-                <img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="profile image">
-                <?php } ?>  
+              <span class="mr-3">Hello! <?php if(isset($_SESSION['admin'])){echo $username;}else{echo "User";}?> !</span><img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-1.png" alt="profile image">
             </a>
-<?php if(isset($_SESSION['user'])){?>
+<?php if(isset($_SESSION['admin'])){?>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <a class="dropdown-item p-0">
                 <div class="d-flex border-bottom">
@@ -67,20 +49,21 @@ if(isset($_SESSION['user'])){
                   <div class="py-3 px-4 d-flex align-items-center justify-content-center"><i class="mdi mdi-alarm-check mr-0 text-gray"></i></div>
                 </div>
               </a>
-              <a class="dropdown-item mt-2" href="manage_account.php">
-                <i class="mdi mdi-account-check"></i>Manage Accounts
-              </a>
-              <a class="dropdown-item" href="dashboard.php">
+              <a class="dropdown-item" href="admin_dashboard.php">
                 <i class="mdi mdi-monitor"></i>Dashboard
               </a>
-              <a class="dropdown-item" href="cart.php">
-                <i class="mdi mdi-cart"></i>Cart
+              <a class="dropdown-item" href="admin_add_course.php">
+                <i class="mdi mdi-plus-circle"></i>Add a course
+              </a>
+              <a class="dropdown-item" href="admin_add_task.php">
+                <i class="mdi mdi-plus-circle"></i>Add a task
               </a>
               <a class="dropdown-item" href="logout.php">
                 <i class="mdi mdi-logout"></i>Sign Out
               </a>
             </div>
-<?php }else{?>               
+<?php }else{?>             
+              
            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <a class="dropdown-item p-0">
                 <div class="d-flex border-bottom">
@@ -90,10 +73,10 @@ if(isset($_SESSION['user'])){
                 </div>
               </a>
               <a class="dropdown-item" href="login.php">
-                <i class="mdi mdi-login"></i>Log In(User)
+                Log In(User)
               </a>
               <a class="dropdown-item" href="admin_login.php">
-                <i class="mdi mdi-login"></i>Log In(Admin)
+                Log In(Admin)
               </a>
             </div>
 <?php }?>             
@@ -101,15 +84,8 @@ if(isset($_SESSION['user'])){
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>            
+          <span class="icon-menu"></span>
         </button>   
         </div>
-<?php if(!isset($_SESSION['user'])){?>
-    <div class="learn_to_code">
-        <h4>Learn To Code For Free</h4>
-        <h5>Free, Fun affective</h5>
-        <a href="login.php"><button type="button" class="btn btn-inverse-secondary btn-rounded btn-fw">Start Learnig Now</button></a>
-        </div>
-<?php }?>
-    </nav>  
+    </nav>   
     </div>
