@@ -1,7 +1,7 @@
 (function($) {
   'use strict';
-  if ($('textarea[name=code-editable]').length) {
-    var editableCodeMirror = CodeMirror.fromTextArea(document.getElementById('code-editable'), {
+  if ($('textarea[name=code_editable]').length) {
+    var editableCodeMirror = CodeMirror.fromTextArea(document.getElementById('code_editable'), {
       mode: "javascript",
       theme: "ambiance",
       lineNumbers: true

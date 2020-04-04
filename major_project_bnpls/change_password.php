@@ -25,6 +25,12 @@ if(isset($_SESSION['user'])){
     <header>
 <?php include ('assets/includes/header.php'); ?>    
     </header>
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
     <div class="container-scroller">
             <div class="row justify-content-center">
@@ -60,7 +66,7 @@ if(isset($_SESSION['user'])){
                       <span class="errormsg"><?php echo $_GET['conf_pass_msg']?></span>
                   <?php  } ?>
                     </div>
-                   <a href=""> <button type="submit" class="btn btn-success mr-2">Update</button></a>
+                   <a href=""> <button type="submit" class="btn btn-primary mr-2">Update</button></a>
                    <!-- <a href="change-password.php"><button class="btn btn-light"></button></a> -->
                   </form>
                 </div>
@@ -70,6 +76,14 @@ if(isset($_SESSION['user'])){
 
     </div>
     </div>
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div> 
+    
+
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
 <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+if(isset($_SESSION['user'])){
 require('assets/includes/connection.php');
 $userinfo_query = "select * from user where email =  '{$_SESSION['user']}'";
 $userinfo_query_result = mysqli_query($con, $userinfo_query) or die(mysqli_error($con));
@@ -10,7 +11,7 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Home</title>
+  <title>Manage-account</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/puse-icons-feather/feather.css">
@@ -29,21 +30,16 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
 <header>
 <?php include('assets/includes/header.php')?>
 </header>
-    
-    
-<div class="container">
-<div class="container-scroller">
-    
-      
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
 <!--        <div class="row w-100">-->
             <div class="row justify-content-center">
                 <div class="col-md-6">
                 <div class="card">
                 <div class="card-body">
                   <center><h4 class="card-title">Profile</h4></center>
-                  <!-- <p class="card-description">
-                    Basic form elements
-                  </p> -->
                   <br>
                   <form class="forms-sample">
                     <div class="form-group">
@@ -62,16 +58,6 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
                       <label for="exampleInputPassword4">Username</label>
                       <input type="text" class="form-control" id="exampleInputName1" placeholder="username" value="<?php echo $userinfo_query_result_array['username'];?>" readonly>
                     </div>
-                    <!-- <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-info" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div> -->
                     <div class="form-group">
                       <label for="exampleInputCity1">Mobile no</label>
                       <input type="text" class="form-control" id="exampleInputCity1" placeholder="mobile no" value="<?php echo $userinfo_query_result_array['mobile'];?>" readonly>
@@ -81,17 +67,30 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
                       <textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
                     </div> -->
                   </form>
-                   <a href="edit_profile.php"> <button class="btn btn-success mr-2">Edit profile</button></a>
+                   <a href="edit_profile.php"> <button class="btn btn-primary mr-2">Edit profile</button></a>
                    <a href="change_password.php"><button class="btn btn-light">Change-password</button></a>
                 </div>
               </div>
                 </div>
             </div>
-      
+        </div>
       <!-- content-wrapper ends -->
     <!-- page-body-wrapper ends -->
+       
     </div>
-    </div>    
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/todolist.js"></script>
+<script src="assets/js/data-table.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>  
+<script src="assets/js/custom_js.js"></script>
     </body>
-<?php include('assets/includes/footer1.php')?>
 </html>
+<?php } else{
+header('location:index.php');
+}?>

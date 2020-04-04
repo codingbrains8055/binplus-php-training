@@ -7,7 +7,6 @@ if(isset($_SESSION['user'])){
     $user_id = $user_id['user_id'];
     $task_query = "select * from task";
     $task_query_result = mysqli_query($con, $task_query) or die(mysqli_error($con));   
-}
 ?>
 
 <html>
@@ -37,6 +36,13 @@ if(isset($_SESSION['user'])){
    include('assets/includes/header.php');
 ?>  
 </header>
+    
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
  <div class="container-fluid">
  
@@ -55,7 +61,12 @@ if(isset($_SESSION['user'])){
                       </tr>
                     </thead>
                     <tbody>
-<?php $count = 1; while($print = mysqli_fetch_array($task_query_result)){?>
+<?php $count = 1; while($print = mysqli_fetch_array($task_query_result)){
+                        $user_task_query = "select user_task_id from user_task where user_id = '$user_id' and task_id = '{$print['task_id']}'";
+                        $user_task_query_result = mysqli_query($con, $user_task_query) or die(mysqli_error($con));
+                        if(mysqli_num_rows($user_task_query_result) < 0){
+                                                                                              
+                        ?>
                       <tr>
                           <td><?php echo $count; ?></td>
                           <td><?php echo $print['task_name']; ?></td>
@@ -65,7 +76,7 @@ if(isset($_SESSION['user'])){
                           <td>
                             <a href="php_script/take_task_script.php?task_id=<?php echo $print['task_id'];?>&user_id=<?php echo $user_id; ?>"><button class="btn btn-success">Take<i class="mdi mdi-arrow-right-bold-circle"></i></button></a>
                       </tr> 
-<?php $count++;} ?>
+<?php $count++; } } ?>
                     </tbody>
                   </table>
                     
@@ -75,6 +86,14 @@ if(isset($_SESSION['user'])){
             </div>
  </div>   
     </div>
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div>     
+    
+
 <footer>
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
@@ -85,7 +104,11 @@ if(isset($_SESSION['user'])){
 <script src="assets/js/settings.js"></script>
 <script src="assets/js/todolist.js"></script>
 <script src="assets/js/data-table.js"></script>
-  <script src="assets/js/hoverable-collapse.js"></script>   
+<script src="assets/js/hoverable-collapse.js"></script>  
+<script src="assets/js/custom_js.js"></script>
 </footer>
     </body>
-</html>
+</html> 
+<?php }else{
+    header('location:index.php');
+} ?>

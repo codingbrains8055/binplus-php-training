@@ -1,12 +1,14 @@
 <?php session_start();
 require('assets/includes/connection.php');
-
-$fetch_course_query = "select * from courses";
-$fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysqli_error($con));
 if(isset($_SESSION['user'])){
-$fetch_user_info = "select user_id from user where email = '{$_SESSION['user']}'";
-$fetch_user_info_result = mysqli_query($con, $fetch_user_info) or die(mysqli_error($con));
-$user = mysqli_fetch_array($fetch_user_info_result);  
+    $header_query = "select * from user where email = '{$_SESSION['user']}'";
+    $header_query_result = mysqli_query($con, $header_query) or die(mysqli_error($con));
+    $header_query_result_array =  mysqli_fetch_array($header_query_result);
+    if($header_query_result_array != NULL){
+        $username = $header_query_result_array['username'];
+    }else {
+        $username = "user";
+    }
 }
 ?>
 
@@ -26,6 +28,7 @@ $user = mysqli_fetch_array($fetch_user_info_result);
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/custom_style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="assets/images/favicon.png" />
@@ -36,24 +39,35 @@ $user = mysqli_fetch_array($fetch_user_info_result);
    include('assets/includes/header.php');
 ?>  
 </header>
-<div class="container">
- <div class="container-fluid">
-   
- </div>   
-    </div>
+    
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
+
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div> 
 <footer>
 
 </footer>
-    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="assets/vendors/chart.js/Chart.min.js"></script>
-    <script src="assets/vendors/raphael/raphael.min.js"></script>
-    <script src="assets/vendors/morris.js/morris.min.js"></script>
-    <script src="assets/js/off-canvas.js"></script>
-    <script src="assets/js/hoverable-collapse.js"></script>
-    <script src="assets/js/misc.js"></script>
-    <script src="assets/js/settings.js"></script>
-    <script src="assets/js/todolist.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/data-table.js"></script>
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+<script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/todolist.js"></script>
+<script src="assets/js/data-table.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>  
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/custom_js.js"></script>
     </body>
 </html>

@@ -36,6 +36,14 @@ $fetch_course_query_result = mysqli_query($con, $fetch_course_query) or die(mysq
    include('assets/includes/header.php');
 ?>  
 </header>
+    
+    
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
  <div class="container-fluid">
             <div class="col-lg-12 grid-margin stretch-card">
@@ -101,8 +109,26 @@ if(mysqli_num_rows($fetch_course_query_result) > 0){
             </div>
  </div>   
     </div>
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div>     
+    
+
 <footer>
-<?php include('assets/includes/footer1.php')?>    
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/todolist.js"></script>
+<script src="assets/js/data-table.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>  
+<script src="assets/js/custom_js.js"></script>  
 </footer>
     </body>
 </html>

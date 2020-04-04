@@ -8,6 +8,7 @@ if(isset($_SESSION['admin'])){
     if($update_query_result){
         header('location:../admin_course_list.php');
     }
+    
 }else{
     header('location:index.php');
 }

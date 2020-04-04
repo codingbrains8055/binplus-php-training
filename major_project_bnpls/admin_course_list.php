@@ -32,8 +32,13 @@ $course_query_result = mysqli_query($con, $course_query) or die(mysqli_error($co
 <header>
 <?php include('assets/includes/admin_header.php')?>
 </header>
-    
-    
+ 
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/admin_sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
 <div class="container-scroller">
  
@@ -48,7 +53,9 @@ $course_query_result = mysqli_query($con, $course_query) or die(mysqli_error($co
                           <th>Course Name</th>
                           <th>Course Type</th>
                           <th>Course Cost(<i class="mdi mdi-currency-inr"></i>)</th>
+                          <th>Course Content</th>
                           <th>Status</th>
+                          <th>Course Questions</th>
                           <th>Actions</th>
                       </tr>
                     </thead>
@@ -60,7 +67,9 @@ $course_query_result = mysqli_query($con, $course_query) or die(mysqli_error($co
                           <td><?php echo $print['course_name']; ?></td>
                           <td><?php echo $print['type']; ?></td>
                           <td><?php if($print['course_cost'] == 0){ echo "Free";}else{echo $print['course_cost'];} ?></td>
+                          <td><?php echo $print['course_content'];?></td>
                           <td><?php echo $print['status']; ?></td>
+                          <td><a class="link" href="admin_course_questions.php?course_id=<?php echo $print['course_id'];?>"><button class="btn">View<i class="mdi mdi-eye"></i></button></a></td>
                           <td>
                             <a href="admin_edit_course.php?course_id=<?php echo $print['course_id'];?>"><button class="btn"><i class="mdi mdi-pen"></i>Edit</button></a>
                           </td>
@@ -78,7 +87,15 @@ $course_query_result = mysqli_query($con, $course_query) or die(mysqli_error($co
         <!-- partial -->
    
     </div>
-    </div>    
+    </div>  
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div> 
+    
+  
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
 <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>

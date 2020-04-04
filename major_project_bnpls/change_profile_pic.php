@@ -30,6 +30,12 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
 <header>
 <?php include('assets/includes/header.php')?>
 </header>   
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
 <div class="container-scroller">
     <div class="row justify-content-center">
@@ -54,9 +60,27 @@ $userinfo_query_result_array = mysqli_fetch_array($userinfo_query_result);
       <!-- content-wrapper ends -->
     <!-- page-body-wrapper ends -->
     </div>
-    </div>    
+    </div>
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div> 
+    
+
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/todolist.js"></script>
+<script src="assets/js/data-table.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>  
+<script src="assets/js/custom_js.js"></script>
     </body>
-<?php include('assets/includes/footer1.php');?>
 </html>
 <?php }else{
     header('location:index.php');

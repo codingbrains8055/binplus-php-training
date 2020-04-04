@@ -22,3 +22,37 @@ function matchpasswords() {
         document.querySelector("#error").innerHTML = '';
     }
 }
+
+function checkanswer(option, answer, no){
+        var ans = document.querySelector(`#${no}`);
+    if(option == answer){
+        ans.className = "mdi mdi-check";
+        clearInput(no);
+    }else{
+        ans.className = "mdi mdi-close";
+        clearInput(no);
+
+    }
+}
+
+function remember(){
+    var email = document.querySelector("#userEmail").value;
+    window.localStorage.setItem('userEmail', email);
+}
+
+function tell(){
+    var email = window.localStorage.getItem('userEmail');
+    var inputEmail = document.querySelector("#userEmail");
+    inputEmail.value = email;
+}
+
+function clearInput(no){
+    setTimeout(function(){
+        var ans = document.querySelector(`#${no}`);
+        ans.className = " ";
+    }, 2000);
+}
+
+function say(){
+    window.alert("hii");
+}

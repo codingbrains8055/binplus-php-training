@@ -23,6 +23,13 @@
 <header>
 <?php include('assets/includes/header.php')?>    
 </header>
+    
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -131,6 +138,14 @@
     <!-- page-body-wrapper ends -->
   </div>
     </div>
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div>     
+    
+
   <!-- container-scroller -->
   <!-- plugins:js -->
 <footer>

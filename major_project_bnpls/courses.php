@@ -37,14 +37,21 @@ $user = mysqli_fetch_array($fetch_user_info_result);
    include('assets/includes/header.php');
 ?>  
 </header>
+
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
  <div class="container-fluid">
      <div class="row justify-content-center">
         <?php while($print = mysqli_fetch_array($fetch_course_query_result)){
          if($print['status'] == "active"){
          ?>
-      <div class="col-md-4 col-sm-12">
-         <div class="card" style="width: 18rem;">
+      <div class="col-md-6 col-sm-12">
+         <div class="card">
   <div class="card-body">
     <h5 class="card-title"><?php echo $print['course_name'];?></h5>
     <p class="card-text"><?php echo $print['course_description'];?></p>
@@ -59,7 +66,7 @@ if(mysqli_num_rows($cart_query_result) > 0){
 <?php }else if($cart_query_result_array['status'] == "added_to_cart"){ ?>
     <a href="cart.php"><button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Go to cart</button></a>
       <?php }else if($cart_query_result_array['status'] == "taken"){ ?>
-       <a href="#"><button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Continue<i class="mdi mdi-arrow-right-circle"></i></button></a>
+       <a href="study.php?course_id=<?php echo $print['course_id'];?>"><button type="button" class="btn btn-inverse-primary btn-rounded btn-fw">Continue<i class="mdi mdi-arrow-right-circle"></i></button></a>
 <?php } }else{ ?>
   <a href="php_script/add_to_cart_script.php?course_id=<?php echo $print['course_id'];?>&user_id=<?php echo $user['user_id'];?>"><button type="button" class="btn btn-inverse-primary btn-rounded btn-fw"><i class="mdi mdi-cart"></i>Add to cart</button></a>  
 <?php }} ?>
@@ -70,6 +77,14 @@ if(mysqli_num_rows($cart_query_result) > 0){
      </div>    
     </div>
     </div>
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div>     
+
+
 <footer>
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="assets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>

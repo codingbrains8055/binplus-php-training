@@ -17,6 +17,7 @@ if(isset($_SESSION['user'])){
   <a class="navbar navbar-brand brand-logo" href="index.php">
     <img src="assets/images/brand-logo/leaning_adda_logo.PNG" width="200" height="70" class="d-inline-block align-top" alt="">
   </a>
+
 <!--
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" >
         <a class="navbar-brand brand-logo" href="index.php"></a>
@@ -39,9 +40,9 @@ if(isset($_SESSION['user'])){
           </li>
           <li class="nav-item active">
               <?php if(isset($_SESSION['user'])){ ?>
-    <a href="task.php" class="nav-link"><i class="mdi mdi-setting"></i>Task</a>
+    <a href="task.php" class="nav-link"><i class="mdi mdi-book"></i>Task</a>
 <?php }else{ ?>
-<a href="login.php" class="nav-link"><i class="mdi mdi-setting"></i>Task</a>   
+<a href="login.php" class="nav-link"><i class="mdi mdi-book"></i>Task</a>   
 <?php }?> ?>  
           </li>
         </ul>
@@ -51,7 +52,7 @@ if(isset($_SESSION['user'])){
 <?php }?>
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="mr-3"><i class="mdi mdi-hand"></i>Hello! <?php if(isset($_SESSION['user'])){echo $username;}else{echo "User";}?> !</span>
+              <span class="mr-3"><i class="mdi mdi-hand"></i>Hello! <?php if(isset($_SESSION['user'])){echo $username;}else{echo "User";}?> !</span> 
                 <?php if(isset($_SESSION['user'])){ ?>
                 <img class="img-xs rounded-circle" src="<?php echo "profile_pic/".$header_query_result_array['profile_pic']?>" alt="profile image">
 <?php }else{ ?>
@@ -75,6 +76,9 @@ if(isset($_SESSION['user'])){
               </a>
               <a class="dropdown-item" href="cart.php">
                 <i class="mdi mdi-cart"></i>Cart
+              </a>
+              <a class="dropdown-item" href="messages.php">
+                <i class="mdi mdi-message"></i>Message
               </a>
               <a class="dropdown-item" href="logout.php">
                 <i class="mdi mdi-logout"></i>Sign Out
@@ -100,16 +104,9 @@ if(isset($_SESSION['user'])){
               
           </li>
         </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>            
-        </button>   
+<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
         </div>
-<?php if(!isset($_SESSION['user'])){?>
-    <div class="learn_to_code">
-        <h4>Learn To Code For Free</h4>
-        <h5>Free, Fun affective</h5>
-        <a href="login.php"><button type="button" class="btn btn-inverse-secondary btn-rounded btn-fw">Start Learnig Now</button></a>
-        </div>
-<?php }?>
     </nav>  
     </div>

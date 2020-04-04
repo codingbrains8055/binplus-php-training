@@ -32,8 +32,13 @@ $user_query_result = mysqli_query($con, $users_query) or die(mysqli_error($con))
 <header>
 <?php include('assets/includes/admin_header.php')?>
 </header>
-    
-    
+ 
+<div class="container-fluid page-body-wrapper">
+<?php include('assets/includes/admin_sidebar.php');?>   
+
+<div class="main-panel">
+<!--        <div class="row w-100">-->
+            <div class="row justify-content-center">
 <div class="container">
 <div class="container-scroller">
  
@@ -67,10 +72,11 @@ $user_query_result = mysqli_query($con, $users_query) or die(mysqli_error($con))
                           <td><?php echo $print['updated_at']; ?></td>
                           <td>
 <?php if($print['status'] == 'active'){?>
-                            <a href="php_script/admin_block_user_script.php?action=block&user_id=<?php echo $print['user_id'];?>"><button class="btn"><i class="mdi mdi-block-helper"></i>Block</button></a>
+                            <a href="php_script/admin_block_user_script.php?action=block&user_id=<?php echo $print['user_id'];?>"><button class="btn btn-icons btn-inverse-danger"><i class="mdi mdi-block-helper"></i></button></a>
     <?php } else if($print['status'] == 'blocked'){ ?>
-                            <a href="php_script/admin_block_user_script.php?action=activate&user_id=<?php echo $print['user_id'];?>"><button class="btn"><i class="mdi mdi-checkbox-marked-circle"></i>Activate</button></a>
+                            <a href="php_script/admin_block_user_script.php?action=activate&user_id=<?php echo $print['user_id'];?>"><button class="btn btn-icons btn-inverse-primary"><i class="mdi mdi-checkbox-marked-circle"></i></button></a>
     <?php }?>
+ <a href="admin_send_msg.php?user_id=<?php echo $print['user_id'];?>"><button type="button" class="btn btn-icons btn-inverse-success"><i class="mdi mdi-email"></i></button></a>
                           </td>
                       </tr> 
 <?php $count++;} ?>
@@ -86,7 +92,15 @@ $user_query_result = mysqli_query($con, $users_query) or die(mysqli_error($con))
         <!-- partial -->
    
     </div>
-    </div>    
+    </div> 
+            </div>
+        </div>
+      <!-- content-wrapper ends -->
+    <!-- page-body-wrapper ends -->
+       
+    </div> 
+    
+   
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
 <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
